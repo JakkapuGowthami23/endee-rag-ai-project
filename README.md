@@ -1,32 +1,31 @@
 # Endee RAG AI Project
 
 ## Project Overview
+This project implements a Retrieval Augmented Generation (RAG) based Question Answering system using Endee as the vector database. The system retrieves relevant document content using semantic search and generates accurate answers using an LLM.
 
-This project implements a **Retrieval Augmented Generation (RAG)** based Question Answering system.  
-It allows users to ask questions over a collection of documents and retrieves **accurate answers** using **semantic search** powered by **Endee** as the vector database.  
-
-**Problem Statement:**  
-Many organizations have large amounts of unstructured data (documents, manuals, FAQs). Searching manually is slow and error-prone.  
-This project provides a fast, automated way to answer questions using the knowledge stored in documents.
-
----
+## Problem Statement
+Traditional keyword-based search systems fail to understand semantic meaning. This project solves that problem by using vector embeddings and similarity search to retrieve relevant context before generating responses.
 
 ## System Design / Technical Approach
+1. Documents are stored in a text file
+2. Each document is converted into vector embeddings
+3. Embeddings are stored in Endee vector database
+4. User queries are converted into embeddings
+5. Endee retrieves semantically similar documents
+6. An LLM generates the final answer using retrieved context
 
-The system works in the following stages:
+## How Endee is Used
+Endee is used as the vector database to:
+- Store document embeddings
+- Perform semantic similarity search
+- Retrieve relevant context for RAG-based answering
 
-1. **Data Ingestion**
-   - Documents are stored in the `data/` folder.
-   - `ingest.py` reads documents and converts them into vector embeddings.
+## Tech Stack
+- Python
+- Endee (Vector Database)
+- SentenceTransformers
+- OpenAI API
 
-2. **Vector Storage**
-   - Endee is used as the **vector database** to store embeddings.
-   - This allows **semantic search** over the documents.
-
-3. **Query Handling**
-   - `query.py` receives a user query.
-   - Converts the query into a vector and searches Endee for the top-K relevant documents.
-   - The retrieved documents are passed to a **Language Model (LLM)** to generate accurate answers.
-
-4. **RAG (Retrieval Augmented Generation)**
-   - Combines the retrieved kno
+## Setup Instructions
+```bash
+pip install -r requirements.txt
