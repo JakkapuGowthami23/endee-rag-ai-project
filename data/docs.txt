@@ -1,0 +1,7 @@
+Machine Learning is a subset of Artificial Intelligence that enables systems to learn from data.
+
+Cloud Computing provides on-demand computing resources such as servers, storage, and databases over the internet.
+
+Vector databases store embeddings and allow semantic similarity search instead of keyword-based search.
+
+Retrieval Augmented Generation (RAG) improves AI responses by retrieving relevant documents before generating answers.
